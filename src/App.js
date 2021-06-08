@@ -2,9 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Registration } from "./components/Registration";
-import { Login } from "./components/Login";
 import { RegistrationList } from "./components/RegistrationList";
 import { AppNavBar } from "./common/AppNavBar";
+import { User } from "./components/User";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         </Route>
 
         <Route path="/login">
-          <Login />
+          <User />
         </Route>
 
         <Route path="/list-registration">

@@ -131,7 +131,7 @@ export function Registration() {
           </Form.Group>
           <div>
             <Button
-              className="alert alert-outline-primary"
+              className="alert alert-primary"
               onClick={(e) => register(e)}
             >
               Register

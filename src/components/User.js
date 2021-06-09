@@ -14,6 +14,7 @@ export function User() {
   const [role, setRole] = useState("");
 
   const [successOperation, setSuccessOperation] = useState(false);
+  const [errorOperation, setErrorOperation] = useState(false);
 
   //Actions Functions
   const updateUserId = (e) => setUserId(e.target.value);
@@ -43,7 +44,7 @@ export function User() {
     setTimeout(() => setSuccessOperation(false), 3000);
 
     //Navigate to Dashboard page on clicking Login
-    //history.push("/list-registration");
+    history.push("/list-registration");
 
     //Reset the Login Form
     setUserId("");

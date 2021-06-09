@@ -7,9 +7,9 @@ export function RegistrationList() {
   return (
     <div className="row">
       <div className="col-3 col-md-3 d-none d-md-block"></div>
-      <div className="col-12 col-md-6">
+      <div className="col-12 col-md-6 d-flex justify-content-end">
         <div className="alert alert-primary">
-          <h3 className="text-center">My Details</h3>
+          <h3 className="text-center">Message will shown here.</h3>
         </div>
       </div>
       <div className="col-3 col-md-3 d-none d-md-block"></div>

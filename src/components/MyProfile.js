@@ -1,40 +1,39 @@
 export function MyProfile() {
   return (
-    <div>
-      <div>
-        <h1>My Details</h1>
+    <div className="row">
+      <div className="col-3 col-md-2 d-none d-md-block"></div>
+      <div className="col-12 col-md-8">
+        <h1 className="alert alert-primary text-center">My Details</h1>
+
+        {/**form table */}
         <div>
-          <table class="table">
-            <thead>
+          <table className="table">
+            <thead className="thead-dark">
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">#ID</th>
+                <th scope="col">FIRST NAME</th>
+                <th scope="col">LAST NAME</th>
+                <th scope="col">EMAIL</th>
+                <th scope="col">MOBILE</th>
+                <th scope="col">PASSWORD</th>
+                <th scope="col">ROLE</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+                <td>first name</td>
+                <td>last name</td>
+                <td>{"****@gmail.com"}</td>
+                <td>1234567890</td>
+                <td>{"********"}</td>
+                <td>employee</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+      <div className="col-3 col-md-2 d-none d-md-block"></div>
     </div>
   );
 }

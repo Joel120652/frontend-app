@@ -2,11 +2,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Registration } from "./components/Registration";
-import { RegistrationList } from "./components/RegistrationList";
+import { Dashboard } from "./components/Dashboard";
 import { AppNavBar } from "./common/AppNavBar";
 import { User } from "./components/User";
 import { AppNavBar1 } from "./common/AppNavBar1";
 import { MyProfile } from "./components/MyProfile";
+import { Home } from "./components/Home";
+import { AppNavBar2 } from "./common/AppNavBar2";
 
 function App() {
   return (
@@ -22,18 +24,18 @@ function App() {
           <User />
         </Route>
 
-        <Route path="/list-registration">
+        <Route path="/dashboard">
           <AppNavBar1 />
-          <RegistrationList />
+          <Dashboard />
         </Route>
 
         <Route path="/home">
           <AppNavBar />
-          <Registration />
+          <Home />
         </Route>
 
         <Route path="/myprofile">
-          <AppNavBar1 />
+          <AppNavBar2 />
           <MyProfile />
         </Route>
       </Switch>

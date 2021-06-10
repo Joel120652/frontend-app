@@ -7,7 +7,7 @@ import { UserReducer } from "./UserReducer";
 
 const rootReducer = combineReducers({
   registration: RegistrationReducer,
-  use: UserReducer,
+  user: UserReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

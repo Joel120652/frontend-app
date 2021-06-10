@@ -11,7 +11,7 @@ export function createRegistrationAction(payload) {
   //Connect to Sprint 1/ Backend Logic is written here
 
   return async (dispatch) => {
-    const url = "http://localhost:8080/api/Registration/EmployeeRegistration";
+    const url = "http://localhost:8080/api/Registration";
     const requestBody = { ...payload };
 
     //Http client
@@ -20,6 +20,7 @@ export function createRegistrationAction(payload) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
     });
+    //dispatch({ type: REGISTRATION_CREATE, payload: payload });
   };
 }
 
@@ -29,6 +30,8 @@ export function RegistrationReducer(state = initState, action) {
     case REGISTRATION_CREATE:
       //Logic
       return { ...state, list: [action.payload, ...state.list] };
+
+    //case REGISTRATION_
 
     default:
       return state;

@@ -51,14 +51,15 @@ export function User() {
       );
 
       //shows successful login message for 3 sec
-      setSuccessOperation(true);
-      setTimeout(() => setSuccessOperation(false), 3000);
+      //setSuccessOperation(true);
+      //setTimeout(() => setSuccessOperation(false), 3000);
 
-      if (state.user.loginAction === true) {
+      /*if (state.user.loginAction === true) {
         //Navigate to Dashboard page on clicking Login
         history.push("/dashboard");
-        return <div></div>;
-      }
+      }*/
+      //Navigate to Dashboard page on clicking Login
+      history.push("/dashboard");
 
       //Reset the Login Form
       setUserId("");

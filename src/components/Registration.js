@@ -32,6 +32,7 @@ export function Registration() {
     /*console.log(firstname, lastname, password, email, mobile, role);
     console.log(formEL);
     console.log(formEL.current.checkValidity());*/
+
     //FirstName Validation
     const re = /^[A-Za-z]+$/;
     if (!re.test(firstname)) {

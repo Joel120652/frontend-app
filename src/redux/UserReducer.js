@@ -2,7 +2,7 @@ const initState = {
   userlist: [],
 
   //Login page Authentication
-  loginAction: false,
+  //loginAction: false,
 };
 
 //Action Types
@@ -17,19 +17,15 @@ export function userLoginAction(payload) {
   return async (dispatch) => {
     // using try and catch for login Authentication
 
-    try {
-      const url = "http://localhost:8080/api/UserLogin";
-      const requestBody = { ...payload };
+    const url = "http://localhost:8080/api/UserLogin";
+    const requestBody = { ...payload };
 
-      await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody),
-      });
-      //dispatch({ type: USER_LOGIN, payload: payload });
-    } catch (error) {
-      console.log(error);
-    }
+    await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestBody),
+    });
+    //dispatch({ type: USER_LOGIN, payload: payload });
     /*const url = "http://localhost:8080/api/UserLogin";
     const requestBody = { ...payload };
 
@@ -74,7 +70,6 @@ export function UserReducer(state = initState, action) {
       return {
         ...state,
         userlist: [action.payload, ...state.userlist],
-        loginAction: true,
       };
     case ADMIN_LOGIN:
       //logic
@@ -86,6 +81,8 @@ export function UserReducer(state = initState, action) {
       oldList.splice(action.payload);
 
       return { ...state, user: [...oldList] };
+
+       userlist: [action.payload, ...state.userlist],
 
     case ADMIN_LOGOUT:
       //logic

@@ -2,9 +2,9 @@ import { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { userLoginAction } from "../redux/UserReducer";
+import { adminLoginAction } from "../redux/AdminReducer";
 
-export function User() {
+export function Admin() {
   const dispatch = useDispatch();
   const history = useHistory();
   const formEL = useRef();
@@ -23,7 +23,7 @@ export function User() {
   const updatePassword = (e) => setPassword(e.target.value);
   const updateRole = (e) => setRole(e.target.value);
 
-  const userLogin = (e) => {
+  const adminLogin = (e) => {
     e.preventDefault();
     // console.log(userId, password, role);
 
@@ -43,7 +43,7 @@ export function User() {
     } else {
       //This is Redux Action
       dispatch(
-        userLoginAction({
+        adminLoginAction({
           userId,
           password,
           role,
@@ -79,7 +79,7 @@ export function User() {
           className="alert alert-warning text-dark text-center mt-3"
           style={{ fontFamily: "cursive" }}
         >
-          LOGIN HERE
+          ADMIN LOGIN HERE
         </h3>
 
         {/***shows Login Successful Message */}
@@ -124,16 +124,17 @@ export function User() {
                   required
                 >
                   <option defaultValue="">Choose your role</option>
-                  <option>user</option>
+                  <option>admin</option>
+                  <option>employee</option>
                 </select>
               </div>
               <div>
                 <Button
                   className="alert alert-outline-primary"
                   style={{ marginLeft: "40%" }}
-                  onClick={(e) => userLogin(e)}
+                  onClick={(e) => adminLogin(e)}
                 >
-                  Login
+                  Admin Login
                 </Button>
               </div>
             </div>
@@ -144,46 +145,3 @@ export function User() {
     </div>
   );
 }
-
-/***<div className="m-4 p-4">
-          <form onSubmit={(e) => userLogin(e)}>
-            <Form.Group controlId="formGroupEmail">
-              <Form.Label>UserId</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email address"
-                value={userId}
-                onChange={(e) => updateUserId(e)}
-              />
-              <Form.Text className="text-muted">
-                Enter the email address used in registration.
-              </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formGroupPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => updatePassword(e)}
-              />
-            </Form.Group>
-            <Form.Group controlId="formGroupRole">
-              <Form.Label>Role</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Customer/seller"
-                value={role}
-                onChange={(e) => updateRole(e)}
-              />
-            </Form.Group>
-            <div>
-              <Button
-                className="alert alert-primary"
-                onClick={(e) => userLogin(e)}
-              >
-                Login
-              </Button>
-            </div>
-          </form>
-        </div>**/

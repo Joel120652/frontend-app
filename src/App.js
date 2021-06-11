@@ -9,6 +9,8 @@ import { AppNavBar1 } from "./common/AppNavBar1";
 import { MyProfile } from "./components/MyProfile";
 import { Home } from "./components/Home";
 import { AppNavBar2 } from "./common/AppNavBar2";
+import { Admin } from "./components/Admin";
+import { Login } from "./components/Login";
 
 function App() {
   return (
@@ -19,9 +21,19 @@ function App() {
           <Registration />
         </Route>
 
-        <Route path="/login">
+        <Route path="/userlogin">
           <AppNavBar />
           <User />
+        </Route>
+
+        <Route path="/login">
+          <AppNavBar />
+          <Login />
+        </Route>
+
+        <Route path="/adminlogin">
+          <AppNavBar />
+          <Admin />
         </Route>
 
         <Route path="/dashboard">

@@ -36,7 +36,7 @@ export function Registration() {
     //FirstName Validation
     const re = /^[A-Za-z]+$/;
     if (!re.test(firstname)) {
-      alert("Please Enter a valid First Name!!!");
+      alert("Please Enter a valid Credentials!!!");
       return;
     }
 
@@ -84,18 +84,24 @@ export function Registration() {
   };
 
   return (
-    <div className="row">
-      <div className="col-3 col-md-3 d-none d-md-block"></div>
-      <div className="col-12 col-md-6">
-        <h1 className="alert alert-secondary text-center mt-3">Registration</h1>
-
+    <div className="row p-2">
+      <div className="col-3 col-md-2 d-none d-md-block"></div>
+      <div className="col-12 col-md-8">
+        <div>
+          <h1
+            className="alert alert-danger text-center mt-2 text-dark"
+            style={{ fontFamily: "cursive" }}
+          >
+            REGISTRATION
+          </h1>
+        </div>
         {/***Print a Success Message */}
         {successOperation && (
           <div className="alert alert-success">Registration Successful!!!</div>
         )}
 
         {/***form block */}
-        <div>
+        <div className="p-4 alert alert-info">
           <form ref={formEL} className="needs-validation" noValidate>
             <div className="row">
               <div className="col mb-4">
@@ -104,6 +110,7 @@ export function Registration() {
                   type="text"
                   className="form-control"
                   placeholder="First Name"
+                  patter="^[A-Za-z]+$"
                   minLength="3"
                   maxLength="10"
                   value={firstname}
@@ -177,90 +184,24 @@ export function Registration() {
             </div>
             <div>
               <Button
-                className="alert alert-primary "
+                className="alert alert-outline-success"
                 onClick={(e) => register(e)}
               >
                 Register
+              </Button>
+
+              <Button
+                className="alert alert-outline-success"
+                onClick={() => history.push("/login")}
+                style={{ marginLeft: "40%" }}
+              >
+                Existing Customer? Login
               </Button>
             </div>
           </form>
         </div>
       </div>
-      <div className="col-3 col-md-3 d-none d-md-block"></div>
+      <div className="col-3 col-md-2 d-none d-md-block"></div>
     </div>
-    //
   );
 }
-
-/**<div>
-          <Row className="mb-3">
-            <Col>
-              <Form.Label>First Name</Form.Label>
-              <input
-                type="text"
-                placeholder="First Name"
-                className="form-control"
-                value={firstname}
-                onChange={(e) => updateFirstName(e)}
-              />
-            </Col>
-            <Col>
-              <Form.Label>Last Name</Form.Label>
-              <input
-                type="text"
-                placeholder="Last name"
-                className="form-control"
-                value={lastname}
-                onChange={(e) => updateLastName(e)}
-              />
-            </Col>
-          </Row>
-          <Form.Group controlId="formGroupEmail">
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              type="email"
-              placeholder="Enter email"
-              value={email}
-              onChange={(e) => updateEmail(e)}
-            />
-            <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
-            </Form.Text>
-          </Form.Group>
-          <Form.Group controlId="formGroupMobile">
-            <Form.Label>Mobile</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Mobile Number"
-              value={mobile}
-              onChange={(e) => updateMobile(e)}
-            />
-          </Form.Group>
-          <Form.Group controlId="formGroupPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => updatePassword(e)}
-            />
-          </Form.Group>
-          <Form.Group controlId="formGroupRole">
-            <Form.Label>Role</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Customer/Seller"
-              value={role}
-              onChange={(e) => updateRole(e)}
-            />
-          </Form.Group>
-          <div>
-            <Button
-              className="alert alert-primary"
-              onClick={(e) => register(e)}
-            >
-              Register
-            </Button>
-          </div>
-        </div>
-       ***/
